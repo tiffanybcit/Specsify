@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="Home_JS.js"></script>
+    <link rel="stylesheet" href="Home_CSS.css">
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+    authDomain: "cybersify-2019.firebaseapp.com",
+    databaseURL: "https://cybersify-2019.firebaseio.com",
+    projectId: "cybersify-2019",
+    storageBucket: "cybersify-2019.appspot.com",
+    messagingSenderId: "286797146225",
+    appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+</script>
+    
+    
+    
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Specsify</a>
+        
+            <!-- Collapse button -->
+            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon3"><span></span><span></span><span></span></div>
+            </button>
+        
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+        
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home page<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+    </nav>
+
+    <div id="homeparagraph">
+        <h1 style="text-align: center">Quiz Time!</h1>
+        <div style="margin: 30px">
+        <form action="./submit.html" style="text-align: center">
+      <fieldset>
+        <legend>Are you a student? If yes specify</legend>
+        <select size="3" name="education" id="education">
+          <option value="College" selected="selected">College</option>
+          <option value="High school">High school</option>
+          <option value="No">Not a student</option>
+        </select>
+        
+      </fieldset>
+            
+            <br>
+            
+      <fieldset>
+          <legend>If college student, which program are you in?</legend>
+        <select size="5" name="school" id="school">
+          
+          <option value="Business" selected="selected">Business</option>
+          <option value="Sciences">Sciences</option>
+          <option value="Media and fine arts">Media and fine arts</option>
+            <option value="Computer Sciences">Computer Sciences</option>
+            <option value="Social Sciences">Social Sciences</option>
+        </select>
+          
+            </fieldset>
+       
+            <br>
+            <fieldset>
+          <legend>Will you be traveling with this Laptop? If yes, how often? </legend>
+        <select size="4" name="travel" id="travel">
+          
+          <option value="Once a week" selected="Once a week">Once a week</option>
+          <option value="twice a week">twice a week</option>
+          <option value="All weekdays">All weekdays</option>
+            <option value="Entire week">Entire week</option>
+           
+        </select>
+          
+            </fieldset>
+          
+            <br>
+           <fieldset>
+          <legend>Do you download a lot of files? Whether it be for personal use or for your program</legend>
+        <select size="2" name="download" id="download">
+          
+          <option value="Yes" selected="Yes">Yes</option>
+          <option value="No">No</option>
+
+           
+        </select>
+          
+            </fieldset>
+          
+          
+            <br>
+            <br>
+<!--            <input id="submit" name="submit" value="Submit" type="submit"/>-->
+        <input id="reset" name="reset" value="Reset" type="reset"/>
+         <div style="text-align: center">
+            <button onclick="saveInput()">Submit</button>
+          </div>
+          
+        
+    </form>
+        </div>
+    </div>
+  
+
+<p id="demo"></p>
+
+<script>
+function saveInput() {
+    let result1 = document.getElementById("education").value;
+ 
+    alert(document.getElementById("education").value);
+    
+   
+    alert(document.getElementById("school").value);
+    
+    
+    alert(document.getElementById("travel").value);
+    
+   
+    alert(document.getElementById("download").value);
+    
+
+
+db.collection("student").doc("answers").set({
+    Result1: document.getElementById("education").value,
+    Result2: document.getElementById("school").value,
+    Result3: document.getElementById("travel").value,
+    Result4: document.getElementById("download").value
+})
+.then(function() {
+    alert("Document successfully written!");
+})
+.catch(function(error) {
+    alert("Error writing document: ", error);
+});
+    
+    
+    
+    
+    
+    
+}
+</script>
+    
+    
+</body>
+</html>
