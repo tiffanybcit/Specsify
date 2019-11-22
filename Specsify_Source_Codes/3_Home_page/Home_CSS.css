@@ -172,20 +172,14 @@ body{
     left: 8px;
     }
     /* End of Nav bar CSs*/
-    .homeparagraph{
-        text-align: center;
-        width: 45em;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    .logoHandler{
+    .logoHandler {
       text-align: center;
     }
     #logoh{
       width: 300px;
       height: 300px;
     }
+<<<<<<< HEAD
 
     /* Buttons */
 
@@ -225,3 +219,19 @@ body{
           margin-bottom: 20px;
           margin-top: 130px;
       }
+=======
+    .descriptionDiv {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 40em;
+    }
+    /* .homeparagraph{
+        text-align: center;
+        width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+     */
+>>>>>>> 66bcd4db64b2ad3349d72e69501888fa31b3694e
