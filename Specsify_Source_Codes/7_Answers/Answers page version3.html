@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Home_JS.js"></script>
+    <link rel="stylesheet" href="Home_CSS.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    
+    
+    
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+    authDomain: "cybersify-2019.firebaseapp.com",
+    databaseURL: "https://cybersify-2019.firebaseio.com",
+    projectId: "cybersify-2019",
+    storageBucket: "cybersify-2019.appspot.com",
+    messagingSenderId: "286797146225",
+    appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+</script>
+    
+    
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Specsify</a>
+        
+            <!-- Collapse button -->
+            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon3"><span></span><span></span><span></span></div>
+            </button>
+        
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+        
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home page<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+    </nav>
+
+    <div id="homeparagraph" style="text-align: center">
+        <h1>Your Answers</h1>
+        <div style="margin: 30px">
+            <form id="myform">
+            <p> “What type of school work will you mainly be using the device for?”  </p>
+            <p> a)  mostly coding;  b)mostly word or excel;  c)mostly browser based applications </p>
+                <p id="stuff">stuff</p>
+<!--            <input type="text" id="q0">-->
+            <br>
+            <p> “How frequently will you bring this device to school?” </p>
+            <p> a) once a week, if any; b)  2-3 times a week;  c)daily; </p>
+                <p id="stuff1">stuff</p>
+<!--            <input type="text" id="q1">-->
+            <br>
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+                <p id="stuff2">stuff</p>
+<!--            <input type="text" id="q2">-->
+            <br>
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+                <p id="stuff3">stuff</p>
+<!--            <input type="text" id="q3">-->
+
+            <br>
+            
+                
+        </form>
+            
+            <form action="specs page version3.html">
+    <button type="submit">Continue</button>
+</form>
+            
+            
+        </div>
+    </div>
+    
+<!--
+    <p id="demo" style="text-align: center"></p>
+    <p id="demo2" style="text-align: center"></p>
+-->
+    
+    
+    
+    <script>
+
+        
+        
+        firebase.auth().onAuthStateChanged(function (user) {
+        
+    db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[0]);
+    document.getElementById("stuff").innerHTML = snap.data().answers[0];
+    //another way is snap.data()["message"]
+    });
+        
+        
+           db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[1]);
+    document.getElementById("stuff1").innerHTML = snap.data().answers[1];
+    //another way is snap.data()["message"]
+    });
+        
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[2]);
+    document.getElementById("stuff2").innerHTML = snap.data().answers[2];
+    //another way is snap.data()["message"]
+    });
+        
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[3]);
+    document.getElementById("stuff3").innerHTML = snap.data().answers[3];
+    //another way is snap.data()["message"]
+    });
+
+        
+        });
+
+    </script>
+    
+    
+    <script src="application.js"></script>
+    
+    
+    
+    
+</body>
+</html>
+
+
+

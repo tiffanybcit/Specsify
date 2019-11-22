@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="Home_JS.js"></script>
+    <link rel="stylesheet" href="Home_CSS.css">
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    
+    
+    
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+    authDomain: "cybersify-2019.firebaseapp.com",
+    databaseURL: "https://cybersify-2019.firebaseio.com",
+    projectId: "cybersify-2019",
+    storageBucket: "cybersify-2019.appspot.com",
+    messagingSenderId: "286797146225",
+    appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+</script>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Specsify</a>
+        
+            <!-- Collapse button -->
+            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon3"><span></span><span></span><span></span></div>
+            </button>
+        
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+        
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home page<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+    </nav>
+    <h1> Hello CST!</h1>
+    <h1> Welcome to the Quiz</h1>
+    <br>
+
+    <!----------------------------------->
+    <!-- Create a form                 -->
+    <!----------------------------------->
+    <div style="text-align: center">
+        <form id="myform">
+            
+<!--
+            <p>What do you study in college:</p>
+  <input type="radio" id="q0" name="major" value="business"> Business<br>
+  <input type="radio" id="q0" name="major" value="sciences"> Sciences<br>
+  <input type="radio" id="q0" name="major" value="nursing"> Nursing<br> 
+  <input type="radio" id="q0" name="major" value="other"> Others<br>           
+-->
+            
+            <p>What is your major?</p>
+            <select size="4" multiple="multiple" name="major" id="q0">
+          <option value="business">Business</option>
+          <option value="sciences">Sciences</option>
+          <option value="nursing">Nursing</option>
+          <option value="others">Others</option>
+          
+        </select>
+            <p>What type of school work will you mainly be using the device for?</p>
+            <select size="3" multiple="multiple" name="usage" id="q1">
+          <option value="mostly coding">mostly coding</option>
+          <option value="mostly word or excel">mostly word or excel</option>
+          <option value="mostly browser based applications">mostly browser based applications</option>
+          
+          
+        </select>
+            <p>How frequently will you bring this device to school?</p>
+            <select size="3" multiple="multiple" name="frequency" id="q2">
+          <option value="once a week">once a week</option>
+          <option value="2-3 times a week">2-3 times a week</option>
+          <option value="daily">daily</option>
+<!--          <option value="others" selected="selected">Others</option>-->
+          
+        </select>
+            
+           
+            <p>Will you be using the device more heavily for (hobbies outside of school work)?</p>
+            <select size="4" multiple="multiple" name="hobbies" id="q3">
+          <option value="Gaming">Gaming</option>
+          <option value="Video Editing">Video Editing</option>
+          <option value="Photography">Photography</option>
+          <option value="others" selected>Others</option>
+          
+        </select>
+            
+            
+            
+            
+            
+            
+<!--
+            
+            <p>What type of school work will you mainly be using the device for?</p>
+  <input type="radio" id="q1" name="q1" value="mostly coding"> mostly coding<br>
+  <input type="radio" id="q1" name="q1" value="mostly word or excel"> mostly word or excel<br>
+  <input type="radio" id="q1" name="q1" value="mostly browser based applications"> mostly browser based applications<br>  
+            
+          <p>How frequently will you bring this device to school?</p>
+  <input type="radio" id="q2" name="q2" value="once a week"> once a week<br>
+  <input type="radio" id="q2" name="q2" value="2-3 times a week"> 2-3 times a week<br>
+  <input type="radio" id="q2" name="q2" value="daily"> daily<br>  
+            
+            
+            <p>Will you be using the device more heavily for (hobbies outside of school work)?</p>
+  <input type="radio" id="q3" name="q3" value="Gaming"> Gaming<br>
+  <input type="radio" id="q3" name="q3" value="Video Editing"> Video Editing<br>
+  <input type="radio" id="q3" name="q3" value="Photography"> Photography<br>  
+-->
+            
+            
+            
+            
+            
+            
+            
+<!--
+            <p> “What type of school work will you mainly be using the device for?”  </p>
+            <p> a)  mostly coding;  b)mostly word or excel;  c)mostly browser based applications </p>
+            <input type="text" id="q0">
+            <br>
+            <p> “How frequently will you bring this device to school?” </p>
+            <p> a) once a week, if any; b)  2-3 times a week;  c)daily; </p>
+            <input type="text" id="q1">
+            <br>
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+            <input type="text" id="q2">
+-->
+            <br>
+<!--
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+            <input type="text" id="q3">
+-->
+
+            <br>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+        <br>
+        <form action="answers page version3.html">
+    <button type="submit">Continue</button>
+</form>
+        
+    </div>
+    <br>
+    <div id="results">
+    </div>
+
+    <!----------------------------------------------->
+    <!--   All my own javascript stuff goes here   -->
+    <!----------------------------------------------->
+    <script src="application1.js"></script>
+    <script>
+//        console.log(document.getElementById("q3").value);
+        alert(document.getElementById("q3").value);
+        createUser();
+        setFormListener("myform");
+    </script>
+</body>
+
+</html>

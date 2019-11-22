@@ -164,10 +164,10 @@ function saveInput() {
 
 
 db.collection("student").doc("answers").set({
-    Result1: document.getElementById("education").value,
-    Result2: document.getElementById("school").value,
-    Result3: document.getElementById("travel").value,
-    Result4: document.getElementById("download").value
+    Result1 = document.getElementById("education").value,
+    Result2 = document.getElementById("school").value,
+    Result3 = document.getElementById("travel").value,
+    Result4 = document.getElementById("download").value
 })
 .then(function() {
     alert("Document successfully written!");
