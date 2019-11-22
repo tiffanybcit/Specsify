@@ -186,3 +186,42 @@ body{
       width: 300px;
       height: 300px;
     }
+
+    /* Buttons */
+
+    .btn {
+      border: none;
+      background-color:#b3e4fc;
+      font-size: 16px;
+      cursor: pointer;
+      text-align:center;
+      display:inline-block;
+    }
+    
+    /* On mouse-over */
+
+    .btn:hover {
+        color: white;
+      }
+
+      .save {
+          height: 50px;
+          width: 350px;
+          color: black;
+          box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+          font-size: 11pt;
+          text-align:center;
+
+          
+      }
+
+      .savedA {
+          height: 50px;
+          width: 350px;
+          color: black;
+          box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+          font-size: 11pt;
+          text-align:center;
+          margin-bottom: 20px;
+          margin-top: 130px;
+      }
