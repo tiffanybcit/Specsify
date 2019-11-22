@@ -11,7 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Home_JS.js"></script>
-    <link rel="stylesheet" href="Home_CSS.css">
+    <link rel="stylesheet" href="Account_page.css">
+
 </head>
 <body>
     <!--Navbar-->
@@ -32,18 +33,43 @@
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Home page<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="#">Account</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Contact us</a>
+                <a class="nav-link" href="#">Settings</a>
                 </li>
             </ul>
             <!-- Links -->
             </div>
             <!-- Collapsible content -->
+            <!-- Profile Picture -->
     </nav>
+
+    <div class="profile-picture">
+        <div class="image-container">
+            <img src="default.png" style="width: 100%">
+        </div>
+    </div>
+    <div class="main-container">
+
+        <p><span id="input-name">  </span></p>
+        <div class="line-name"></div>
+        <p id="name"> Name </p>
+            </br>
+            </br>
+            </br>
+        <p><span id="email-name">  </span></p>
+        <div class="line-email"></div>
+        <p id="email"> Email </p>
+    </div>
+
+        <div class="btn">
+                <button class="btn savedA">Saved Answers</button>
+                <button class="btn save">Saved Recommendations</button>
+        </div>
+
 </body>
 </html>
