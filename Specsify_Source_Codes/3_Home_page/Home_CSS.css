@@ -172,17 +172,24 @@ body{
     left: 8px;
     }
     /* End of Nav bar CSs*/
-    .homeparagraph{
-        text-align: center;
-        width: 45em;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    .logoHandler{
+    .logoHandler {
       text-align: center;
     }
     #logoh{
       width: 300px;
       height: 300px;
     }
+    .descriptionDiv {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 40em;
+    }
+    /* .homeparagraph{
+        text-align: center;
+        width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+     */
