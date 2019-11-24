@@ -91,8 +91,18 @@
         
         <br>
         <br>
+        <p id="store1"></p>
             <p id="demo" style="text-align: center"></p>
     <p id="demo2" style="text-align: center"></p>
+        <p id="store2"></p>
+        <p id="demo3" style="text-align: center"></p>
+    <p id="demo4" style="text-align: center"></p>
+        <p id="store3"></p>
+        <p id="demo5" style="text-align: center"></p>
+    <p id="demo6" style="text-align: center"></p>
+        <p id="store4"></p>
+        <p id="demo7" style="text-align: center"></p>
+    <p id="demo8" style="text-align: center"></p>
     </div>
     
      <script>
@@ -140,6 +150,7 @@
          
          
          function getShops() {
+             document.getElementById("store1").innerHTML = "Costco";
             
             db.collection('Stores').doc('Costco').onSnapshot(function(snap){
     console.log("Current data is...", snap.data());
@@ -148,7 +159,39 @@
              db.collection('Stores').doc('Costco').onSnapshot(function(snap){
     console.log("Current data is...", snap.data());
     document.getElementById("demo2").innerHTML = snap.data().pricematch;
-    });         
+    });       
+             
+             
+             document.getElementById("store2").innerHTML = "Bestbuy";
+             db.collection('Stores').doc('bestbuy').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo3").innerHTML = snap.data().returnpolicy;
+    });  
+             
+             db.collection('Stores').doc('bestbuy').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo4").innerHTML = snap.data().pricematch;
+    });  
+             document.getElementById("store3").innerHTML = "Amazon";
+             db.collection('Stores').doc('Amazon').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo5").innerHTML = snap.data().returnpolicy;
+    });  
+             
+             db.collection('Stores').doc('Amazon').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo6").innerHTML = snap.data().pricematch;
+    });  
+             document.getElementById("store4").innerHTML = "Staples";
+             db.collection('Stores').doc('Staples').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo7").innerHTML = snap.data().returnpolicy;
+    });  
+             
+             db.collection('Stores').doc('Staples').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo8").innerHTML = snap.data().pricematch;
+    });  
             
         }
          

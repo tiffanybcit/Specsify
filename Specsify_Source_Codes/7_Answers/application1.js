@@ -86,15 +86,15 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     var type = "n/a"; // laptop, tablet
     var message = "n/a";
 
-    console.log("inside getAndSaveRecommendations..." + q0 + q1 + q2 + q3);
-    if (q0 == "sciences") && (q1 == "mostly coding") && (q2 == "daily") && (q3 == "Gaming"){
-     ram = 16;
-        drive = 512;
-        cpu = "i7";
-        type = "laptop";
-        message = "You need a powerful machine to ace your school, and keep up your hobbies";
-        
-    }
+//    console.log("inside getAndSaveRecommendations..." + q0 + q1 + q2 + q3);
+//    if (q0 == "sciences") && (q1 == "mostly coding") && (q2 == "daily") && (q3 == "Gaming"){
+//     ram = 16;
+//        drive = 512;
+//        cpu = "i7";
+//        type = "laptop";
+//        message = "You need a powerful machine to ace your school, and keep up your hobbies";
+//        
+//    }
 //    else if (document.getElementById("q0").value == "nursing")){
 //     ram = 4;
 //        drive = 64;
@@ -136,28 +136,76 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
 //        
 //    }
     
-    
-    // the power coding student who games or video-edits
-    if (q0.localeCompare("a") &&
-        q1.localeCompare("c") &&
-        (q2.localeCompare("a") || q2.localeCompare("b"))) {
+       // the power coding student who games or video-edits NEW ALGORITHM
+    if (q0.localeCompare("sciences") == 0 &&
+        q1.localeCompare("mostly coding") == 0 &&
+        q2.localeCompare("daily") == 0 && q3.localeCompare("Gaming") == 0) {
         ram = 16;
         drive = 512;
         cpu = "i7";
-        type = "laptop";
+        type = "laptop or desktop";
         message = "You need a powerful machine to ace your school, and keep up your hobbies"
     }
-
-    // the casual stay home web surfer
-    if (q0.localeCompare("c") &&
-        q1.localeCompare("a") &&
-        q2.localeCompare("d")) {
+    //the default choices
+    else if (q0.localeCompare("business") == 0 &&
+        q1.localeCompare("mostly word or excel") == 0){
+    ram = 8;
+        drive = 256;
+        cpu = "i5";
+        type = "laptop";
+        message = "Business people are gay."
+    }
+    else if (q0.localeCompare("others") == 0 &&
+        q1.localeCompare("mostly browser based applications") == 0 &&
+        q3.localeCompare("Photography") == 0){
+    ram = 16;
+        drive = 512;
+        cpu = "i5";
+        type = "desktop";
+        message = "Get a MAC, bro. Have fun with Photoshop!"
+    }
+        else if (q0.localeCompare("others") == 0 &&
+        q1.localeCompare("mostly browser based applications") == 0 &&
+        q3.localeCompare("Video Editing") == 0){
+    ram = 16;
+        drive = 512;
+        cpu = "i5";
+        type = "desktop";
+        message = "Get a MAC, bro. Need something good for video editing."
+    }
+    
+    else {
         ram = 4;
         drive = 64;
         cpu = "i3";
         type = "desktop";
         message = "You need just a basic computer on your desk."
+        
     }
+    
+    
+    
+//    // the power coding student who games or video-edits
+//    if (q0.localeCompare("a") &&
+//        q1.localeCompare("c") &&
+//        (q2.localeCompare("a") || q2.localeCompare("b"))) {
+//        ram = 16;
+//        drive = 512;
+//        cpu = "i7";
+//        type = "laptop";
+//        message = "You need a powerful machine to ace your school, and keep up your hobbies"
+//    }
+//
+//    // the casual stay home web surfer
+//    if (q0.localeCompare("c") &&
+//        q1.localeCompare("a") &&
+//        q2.localeCompare("d")) {
+//        ram = 4;
+//        drive = 64;
+//        cpu = "i3";
+//        type = "desktop";
+//        message = "You need just a basic computer on your desk."
+//    }
 
     // write the recommendations into the database for this user. 
     firebase.auth().onAuthStateChanged(function (user) {
