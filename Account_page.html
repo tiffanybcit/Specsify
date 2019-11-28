@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Default</title>
+    <title>My Account</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Home_JS.js"></script>
-    <link rel="stylesheet" href="Default_CSS.css">
+    <script type="text/javascript" src="script/navbar.js"></script>
+    <link rel="stylesheet" href="style/Account_page.css">
+
 </head>
 <body>
     <!--Navbar-->
@@ -44,7 +45,32 @@
             <!-- Links -->
             </div>
             <!-- Collapsible content -->
+            <!-- Profile Picture -->
     </nav>
+
+    <div class="profile-picture">
+        <div class="image-container">
+            <img src="image/Logo.png" style="width: 100%">
+        </div>
+    </div>
+    <div class="main-container">
+
+        <p><span id="input-name">  </span></p>
+        <div class="line-name"></div>
+        <p id="name"> Name </p>
+            </br>
+            </br>
+            </br>
+        <p><span id="email-name">  </span></p>
+        <div class="line-email"></div>
+        <p id="email"> Email </p>
+    </div>
+
+    <!-- Buttons -->
+        <div class="btn">
+            <button class="btn savedA">Saved Answers</button>
+            <button class="btn save">Saved Recommendations</button>
+        </div>
 
 </body>
 </html>

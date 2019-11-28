@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login page</title>
-    
+    <title>My Answers</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Home_JS.js"></script>
-    <link rel="stylesheet" href="Home_CSS.css">
+    <script type="text/javascript" src="script/navbar.js"></script>
+    <link rel="stylesheet" href="style/navbar.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    
-    
-    
 
 <script>
   // Your web app's Firebase configuration
@@ -39,8 +36,8 @@
   firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 </script>
-    
-    
+
+
 </head>
 <body>
     <!--Navbar-->
@@ -48,16 +45,16 @@
 
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">Specsify</a>
-        
+
             <!-- Collapse button -->
             <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
             aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>
             </button>
-        
+
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent22">
-        
+
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -76,61 +73,71 @@
     </nav>
 
     <div id="homeparagraph" style="text-align: center">
-        <h1>Your Specs</h1>
+        <h1>Your Answers</h1>
         <div style="margin: 30px">
-            <p style="font-size: 30pt">CPU: <span id="stuff">Stuff</span></p>
-        <p style="font-size: 30pt">RAM: <span id="stuff2">Stuff</span></p>
-            <p style="font-size: 30pt">Size: <span id="stuff3">Stuff</span></p>
-            <p style="font-size: 30pt">Storage: <span id="stuff4">Stuff</span></p>
-            <p style="font-size: 30pt">Quiz is done: <span id="stuff5">Stuff</span></p>
-            <p style="font-size: 30pt">Scroll down for some shops</p>
+            <form id="myform">
+            <p> “What type of school work will you mainly be using the device for?”  </p>
+            <p> a)  mostly coding;  b)mostly word or excel;  c)mostly browser based applications </p>
+                <p id="stuff">stuff</p>
+<!--            <input type="text" id="q0">-->
+            <br>
+            <p> “How frequently will you bring this device to school?” </p>
+            <p> a) once a week, if any; b)  2-3 times a week;  c)daily; </p>
+                <p id="stuff1">stuff</p>
+<!--            <input type="text" id="q1">-->
+            <br>
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+                <p id="stuff2">stuff</p>
+<!--            <input type="text" id="q2">-->
+            <br>
+            <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
+            <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
+                <p id="stuff3">stuff</p>
+<!--            <input type="text" id="q3">-->
+
+            <br>
+
+        </form>
+            <form action="specspage.html">
+              <button type="submit">Continue</button>
+            </form>
         </div>
     </div>
-    
-    
+
     <script>
-    db.collection('Recommendations').doc('CPU').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff").innerHTML = snap.data().i3;
+        firebase.auth().onAuthStateChanged(function (user) {
+
+    db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[0]);
+    document.getElementById("stuff").innerHTML = snap.data().answers[0];
     //another way is snap.data()["message"]
     });
-        
-        
-           db.collection('Recommendations').doc('RAM').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff2").innerHTML = snap.data().min;
+
+
+           db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[1]);
+    document.getElementById("stuff1").innerHTML = snap.data().answers[1];
     //another way is snap.data()["message"]
     });
-        
-        db.collection('Recommendations').doc('size').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff3").innerHTML = snap.data().normal;
+
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[2]);
+    document.getElementById("stuff2").innerHTML = snap.data().answers[2];
     //another way is snap.data()["message"]
     });
-        
-        db.collection('Recommendations').doc('storage').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff4").innerHTML = snap.data().min;
+
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().answers[3]);
+    document.getElementById("stuff3").innerHTML = snap.data().answers[3];
     //another way is snap.data()["message"]
     });
-        db.collection('Recommendations').doc('quizdone').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff5").innerHTML = snap.data().done;
-    //another way is snap.data()["message"]
-    });
-        
-        
+
+        });
 
     </script>
-    
-    
-    
-    
-    
-    
-    
+
+    <script src="script/application1.js"></script>
+
 </body>
 </html>
-
-
-

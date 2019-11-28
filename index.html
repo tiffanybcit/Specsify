@@ -2,25 +2,19 @@
 
 <html lang="en">
 <head>
-
+  <title>Main</title>
     <!-- Include firebase related things -->
 
         <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Add Firebase products that you want to use -->
         <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-
-
-
-
-
-
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -38,26 +32,17 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-    
-    
+
+
 const db = firebase.firestore();
 </script>
-
-
-
-
-
-
-
-
-
     <style>
         body {
             background-color: #b3e4fc;
         }
         #logo {
-            width: 50%;
-            height: 50%;
+            width: 20em;
+            height: 20em;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -66,12 +51,6 @@ const db = firebase.firestore();
             color: white;
         }
     </style>
-
-
-
-
-
-
 </head>
 
 <body>
@@ -81,16 +60,10 @@ const db = firebase.firestore();
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <img id="logo" src="Logo%20v2.png" alt="Logo"/>
-        <br>
+        <img id="logo" src="image/Logo.png" alt="Logo"/>
         <br>
         <br>
         <br>
-        <br>
-
-
     </div>
 
     <div id="firebaseui-auth-container"></div>
@@ -115,7 +88,7 @@ const db = firebase.firestore();
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'questionpage version3.html',
+            signInSuccessUrl: 'Home_page.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
 //                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -126,17 +99,17 @@ const db = firebase.firestore();
                 //firebase.auth.PhoneAuthProvider.PROVIDER_ID
             ],
             // Terms of service url.
-            tosUrl: 'questionpage version3.html',
+            tosUrl: 'Home_page.html',
             // Privacy policy url.
-            privacyPolicyUrl: 'questionpage version3.html'
+            privacyPolicyUrl: 'Home_page.html'
         };
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-<script src="create_user.js"></script>
+<script src="script/create_user.js"></script>
     <script>
         createUser();
-        
+
     </script>
 </body>
 </html>

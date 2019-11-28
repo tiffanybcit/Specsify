@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Home_JS.js"></script>
-    <link rel="stylesheet" href="Home_CSS.css">
+    <script type="text/javascript" src="script/navbar.js"></script>
+    <link rel="stylesheet" href="style/homepage.css">
 </head>
 <body>
     <!--Navbar-->
@@ -46,7 +46,7 @@
             <!-- Collapsible content -->
     </nav>
     <div class="logoHandler">
-      <img src="../Pictures/Logo.png" alt="logo" id="logoh">
+      <img src="image/Logo.png" alt="logo" id="logoh">
     </div>
     <div class="descriptionDiv">
         <h4 class="head1">FIND YOUR NEW LAPTOP NOW!</h4>
@@ -57,11 +57,10 @@
             Click the button below to begin the questionnaire.</p>
         </div>
     </div>
-
-    <div class="button">
+    <form action="questionnaire.html">
+      <div class="button">
             <button class="button NEWQ">BEGIN NEW QUESTIONAIRE</button>
-            <button class="button CONTQ">CONTINUE QUESTIONAIRE</button>
-            <button class="button SAVEDA">SAVED ANSWERS</button>
-    </div>
+      </div>
+    </form>
 </body>
 </html>

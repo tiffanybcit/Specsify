@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login page</title>
-    
+    <title>My Result</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Home_JS.js"></script>
-    <link rel="stylesheet" href="Home_CSS.css">
+    <script type="text/javascript" src="script/navbar.js"></script>
+    <link rel="stylesheet" href="style/navbar.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 
@@ -20,9 +20,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    
-    
-    
 
 <script>
   // Your web app's Firebase configuration
@@ -39,8 +36,7 @@
   firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 </script>
-    
-    
+
 </head>
 <body>
     <!--Navbar-->
@@ -48,16 +44,16 @@
 
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">Specsify</a>
-        
+
             <!-- Collapse button -->
             <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
             aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>
             </button>
-        
+
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent22">
-        
+
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -76,27 +72,73 @@
     </nav>
 
     <div id="homeparagraph" style="text-align: center">
-        <h1>Your Answers</h1>
+        <h1>Your Specs</h1>
         <div style="margin: 30px">
-            <p style="font-size: 30pt">Are you a student? If yes specify. Answer: <span id="stuff">Stuff</span></p>
-        <p style="font-size: 30pt">If college student, which program are you in? Answer: <span id="stuff2">Stuff</span></p>
-            <p style="font-size: 30pt">Will you be traveling with this Laptop? If yes, how often? Answer: <span id="stuff3">Stuff</span></p>
-            <p style="font-size: 30pt">Do you download a lot of files? Whether it be for personal use or for your program. Answer: <span id="stuff4">Stuff</span></p>
-            <p style="font-size: 30pt">Quiz is done: <span id="stuff5">Stuff</span></p>
-            <div style="text-align: center">
-            <button onclick="getShops()">Click here for some shop recommendations</button>
-                </div>
+            <p style="font-size: 30pt">CPU: <span id="stuff">Stuff</span></p>
+        <p style="font-size: 30pt">Drive: <span id="stuff1">Stuff</span></p>
+            <p style="font-size: 30pt">RAM: <span id="stuff2">Stuff</span></p>
+            <p style="font-size: 30pt">Type: <span id="stuff3">Stuff</span></p>
+          <p style="font-size: 30pt"><span id="stuff4">Stuff</span></p>
+            <p style="font-size: 30pt">Scroll down for some shops</p>
         </div>
-    </div>
-    
-    <p id="demo" style="text-align: center"></p>
+        <button onclick="getShops()">Click here for some shop recommendations</button>
+
+        <br>
+        <br>
+        <p id="store1"></p>
+            <p id="demo" style="text-align: center"></p>
     <p id="demo2" style="text-align: center"></p>
-    
-    
-    
-    <script>
-        function getShops() {
-            
+        <p id="store2"></p>
+        <p id="demo3" style="text-align: center"></p>
+    <p id="demo4" style="text-align: center"></p>
+        <p id="store3"></p>
+        <p id="demo5" style="text-align: center"></p>
+    <p id="demo6" style="text-align: center"></p>
+        <p id="store4"></p>
+        <p id="demo7" style="text-align: center"></p>
+    <p id="demo8" style="text-align: center"></p>
+    </div>
+
+     <script>
+
+        firebase.auth().onAuthStateChanged(function (user) {
+
+    db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().cpu);
+    document.getElementById("stuff").innerHTML = snap.data().cpu;
+    //another way is snap.data()["message"]
+    });
+
+
+           db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().drive);
+    document.getElementById("stuff1").innerHTML = snap.data().drive;
+    //another way is snap.data()["message"]
+    });
+
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().ram);
+    document.getElementById("stuff2").innerHTML = snap.data().ram;
+    //another way is snap.data()["message"]
+    });
+
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().type);
+    document.getElementById("stuff3").innerHTML = snap.data().type;
+    //another way is snap.data()["message"]
+    });
+
+        db.collection('users').doc(user.uid).onSnapshot(function(snap){
+    console.log("Current data is...", snap.data().message);
+    document.getElementById("stuff4").innerHTML = snap.data().message;
+    //another way is snap.data()["message"]
+    });
+
+        });
+
+         function getShops() {
+             document.getElementById("store1").innerHTML = "Costco";
+
             db.collection('Stores').doc('Costco').onSnapshot(function(snap){
     console.log("Current data is...", snap.data());
     document.getElementById("demo").innerHTML = snap.data().returnpolicy;
@@ -105,56 +147,42 @@
     console.log("Current data is...", snap.data());
     document.getElementById("demo2").innerHTML = snap.data().pricematch;
     });
-            
-            
-            
+
+
+             document.getElementById("store2").innerHTML = "Bestbuy";
+             db.collection('Stores').doc('bestbuy').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo3").innerHTML = snap.data().returnpolicy;
+    });
+
+             db.collection('Stores').doc('bestbuy').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo4").innerHTML = snap.data().pricematch;
+    });
+             document.getElementById("store3").innerHTML = "Amazon";
+             db.collection('Stores').doc('Amazon').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo5").innerHTML = snap.data().returnpolicy;
+    });
+
+             db.collection('Stores').doc('Amazon').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo6").innerHTML = snap.data().pricematch;
+    });
+             document.getElementById("store4").innerHTML = "Staples";
+             db.collection('Stores').doc('Staples').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo7").innerHTML = snap.data().returnpolicy;
+    });
+
+             db.collection('Stores').doc('Staples').onSnapshot(function(snap){
+    console.log("Current data is...", snap.data());
+    document.getElementById("demo8").innerHTML = snap.data().pricematch;
+    });
+
         }
-        
-        
-        
-        
-    db.collection('student').doc('answers').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff").innerHTML = snap.data().Result1;
-    //another way is snap.data()["message"]
-    });
-        
-        
-           db.collection('student').doc('answers').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff2").innerHTML = snap.data().Result2;
-    //another way is snap.data()["message"]
-    });
-        
-        db.collection('student').doc('answers').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff3").innerHTML = snap.data().Result3;
-    //another way is snap.data()["message"]
-    });
-        
-        db.collection('student').doc('answers').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff4").innerHTML = snap.data().Result4;
-    //another way is snap.data()["message"]
-    });
-        db.collection('Recommendations').doc('quizdone').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById("stuff5").innerHTML = snap.data().done;
-    //another way is snap.data()["message"]
-    });
-        
-        
 
     </script>
-    
-    
-    
-    
-    
-    
-    
+
 </body>
 </html>
-
-
-
