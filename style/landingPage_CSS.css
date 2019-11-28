@@ -1,33 +1,51 @@
 /* Body*/
 body{
   background-color: #b3e4fc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.container {
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .empty {
-  height: 13em;
+  height: 70px;
 }
-.welcomeHandler {
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
+
+.empty_1 {
+  height: 300px;
 }
+
 .welcome {
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center;
-  text-decoration: underline;
+  text-align:center;
+  font-size: 40pt;
+  padding-bottom: -30px;
+
 }
-.para {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+
+.description {
+  text-align:center;
+  font-size: 10pt;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-.para1 {
-  font-size: 20px;
-  letter-spacing: 2px;
-  font-weight: bold;
+
+.btn {
+  border: none;
+  background-color:#b3e4fc;
+  font-size: 16px;
+  cursor: pointer;
+  display:inline-block;
 }
+
+/* On mouse-over */
+
+.btn:hover {
+    color: white;
+  }
+
+    .begin {
+      height: 50px;
+      width: 300px;
+      color: black;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+      font-size: 11pt;
+      text-align: center;
+
+
