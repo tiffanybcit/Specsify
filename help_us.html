@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About us</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="navbar.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+            authDomain: "cybersify-2019.firebaseapp.com",
+            databaseURL: "https://cybersify-2019.firebaseio.com",
+            projectId: "cybersify-2019",
+            storageBucket: "cybersify-2019.appspot.com",
+            messagingSenderId: "286797146225",
+            appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+    </script>
+    <link rel="stylesheet" href="style/Help_page.css">
+  </head>
+  <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+    
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Specsify</a>
+    
+                <!-- Collapse button -->
+                <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon3"><span></span><span></span><span></span></div>
+                </button>
+    
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+    
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home page<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Account</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+                <!-- End of the navbar -->
+                <!-- Text -->
+                <div class="empty1"></div>
+                <div class="title">
+                    <p id="needHelp"><b><i>Need Help?</i></b></p>
+                    <p id="assist">Have a question? Need some help? 
+                        Let us know how we can assist you!</p>
+                </div>
+
+                <div class="contact">
+                    <div id="empty2"></div>
+                    <p>specsify@gmail.com</p>
+                    <div id="line1"></div>
+                    <p id="email">Email us</p>
+
+                    <div id="empty3"></div>
+                    <p>@Specsify</p>
+                    <div id="line2"></div>
+                    <p id="twitter">Tweet us</p>
+                </div>
+  </body>
+</html>
