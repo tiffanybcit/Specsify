@@ -234,6 +234,23 @@ body{
           .submitButton:hover {
               color: white;
             }
+
+
+    /* Tablet */
+    @media screen and (max-width: 992px) {
+        body {
+        background-color: pink;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    }
+
+    /* Phone */
+    @media screen and (max-width: 600px) {
+        body {
+        background-color: grey;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    }
                   
               
       
