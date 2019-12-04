@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------------
-// This code creates a user document in firestore, 
+// This code creates a user document in firestore,
 // using the "uid" that came with the authenticated user.
 //-----------------------------------------------------------------------------------
 function createUser() {
@@ -20,7 +20,7 @@ function createUser() {
 
 //-----------------------------------------------------------------------------------
 // This code listens for the submit button on form, grabs the text that user typed
-// then writes this value (converted to int first) into firestore 
+// then writes this value (converted to int first) into firestore
 // as a new document in the assignments collection.
 //-----------------------------------------------------------------------------------
 function setFormListener(form) {
@@ -30,10 +30,9 @@ function setFormListener(form) {
         var q1 = document.getElementById("q1").value;
         var q2 = document.getElementById("q2").value;
         var q3 = document.getElementById("q3").value;
-//        var sample = document.getElementsById("q3");
-        
+
         console.log(q3);
-       
+
         console.log("inside setFormListener ..." + q0 + q1 + q2 + q3);
         processForm(q0, q1, q2, q3);
     })
@@ -63,7 +62,7 @@ function processForm(q0, q1, q2, q3) {
 // Q1:  “What is your major?”
 // Choices:  a)  Business;  b)Sciences;  c)Nursing; d) Others;
 //
-// Q2:  “What type of school work will you mainly be using the device for?”   
+// Q2:  “What type of school work will you mainly be using the device for?”
 // Choices:  a) mostly coding; b)  mostly word or excel;  c)mostly browser based applications;
 //
 // Q3:  "How frequently will you bring this device to school?"
@@ -76,13 +75,14 @@ function processForm(q0, q1, q2, q3) {
 //-------------------------------------------------------------------------
 function getAndSaveRecommendation(q0, q1, q2, q3) {
 
-    // defaults 
+    // defaults
+
     var ram = "n/a"; //4, 8, 16 MB
     var drive = "n/a"; //32, 64, 128, 256 512 GB
     var cpu = "n/a"; //i3, i5, i7 core
     var type = "n/a"; // laptop, tablet
     var message = "n/a";
-    
+
        // for the power coding student who codes
     if (q0.localeCompare("sciences") == 0 &&
         q1.localeCompare("mostly coding") == 0) {
@@ -117,8 +117,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
         cpu = "i5";
         type = "desktop";
         message = "Get a MAC, bro. Have fun with Photoshop!"
-    } 
-      // for people who use browser based apps and video editing  
+    }
+      // for people who use browser based apps and video editing
     else if (q0.localeCompare("others") == 0 &&
         q1.localeCompare("mostly browser based applications") == 0 &&
         q3.localeCompare("Video Editing") == 0){
@@ -130,18 +130,19 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     }
       // default choice
     else {
-        ram = "4GB";
-        drive = "64GB";
+
+        ram = "8GB";
+        drive = "128GB";
         cpu = "i3";
         type = "desktop";
         message = "You need just a basic computer on your desk."
-        
-    }
-    
-    
-    
 
-    // write the recommendations into the database for this user. 
+    }
+
+
+
+
+    // write the recommendations into the database for this user.
     firebase.auth().onAuthStateChanged(function (user) {
         //console.log(user.uid);
         // write a new document of grade value
@@ -159,8 +160,12 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     //getAnswers();
     //generateResults();
 
+<<<<<<< HEAD
   
   
   
 
 }
+=======
+}
+>>>>>>> 5458103ddc756a0ac3ecd341955cac58d7ebb7a1
