@@ -36,7 +36,53 @@
   firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 </script>
+<style>
+  .button {
+        border: none;
+        background-color:#b3e4fc;
+        font-size: 16px;
+        cursor: pointer;
+        height: 50px;
+        width: 350px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+        font-size: 11pt;
+        text-align: center;
 
+
+      }
+
+      .empty {
+          height: 60px;
+      }
+    
+      /* On mouse-over */
+    
+      .button:hover {
+          color: white;
+        }
+
+        .submitButton {
+            border: none;
+            background-color:#b3e4fc;
+            font-size: 16px;
+            cursor: pointer;
+            height: 50px;
+            width: 350px;
+            color: black;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+            font-size: 11pt;
+            text-align: center;
+    
+    
+          }
+        
+          /* On mouse-over */
+        
+          .submitButton:hover {
+              color: white;
+            }
+</style>
 </head>
 <body>
     <!--Navbar-->
@@ -81,16 +127,21 @@
           <p style="font-size: 30pt"><span id="stuff4">Stuff</span></p>
 <!--            <p style="font-size: 30pt">Scroll down for some shops</p>-->
         </div>
-        <button onclick="getShops()">Click here for some shop recommendations</button>
+      <form action="Home_page.html">
+        <button class="submitButton", type="submit">Go to Homepage</button>
+          </form>
+      
+      <br>
+        <button onclick="getShops()" class= "submitButton">Click here for some shop recommendations</button>
 
         <br>
         <br>
       <div style="text-align: center">
       <table>
-        <tr ><th><p id="store1"></p></th>
-        <th><p id="store2"></p></th>
-        <th><p id="store3"></p></th>
-          <th><p id="store4"></p></th>
+        <tr ><th><a href="https://www.costco.ca/" target="_blank"><p id="store1"></p></a></th>
+          <th><a href="https://www.bestbuy.ca/en-ca" target="_blank"><p id="store2"></p></a></th>
+        <th><a href="https://www.amazon.ca/"><p id="store3"></p></a></th>
+          <th><a href="https://www.staples.ca/"><p id="store4"></p></a></th>
         
         
         </tr>
@@ -118,6 +169,10 @@
         
     
         </table>
+        <p id = "test" style="font-size: 30pt; color: darkblue"></p>
+        
+        
+        
         </div>
     </div>
 
@@ -159,13 +214,16 @@
         });
 
          function getShops() {
+           var store = db.collection('Stores');
+        
+           
              document.getElementById("store1").innerHTML = "Costco";
 
-            db.collection('Stores').doc('Costco').onSnapshot(function(snap){
+            store.doc('Costco').onSnapshot(function(snap){
     console.log("Current data is...", snap.data());
     document.getElementById("demo").innerHTML = snap.data().returnpolicy;
     });
-             db.collection('Stores').doc('Costco').onSnapshot(function(snap){
+             store.doc('Costco').onSnapshot(function(snap){
     console.log("Current data is...", snap.data());
     document.getElementById("demo2").innerHTML = snap.data().pricematch;
     });
@@ -201,6 +259,21 @@
     console.log("Current data is...", snap.data());
     document.getElementById("demo8").innerHTML = snap.data().pricematch;
     });
+           
+//        var test = db.collection("Stores").where("slogan", "==", true);
+//           test.doc("Staples").onSnapshot(function(snap){
+//             document.getElementById("test").innerHTML = snap.data().slogan;
+//          });
+           
+           
+      var costco = db.collection('Stores').where('costco', '==', 'Costco is the best!!!');
+      costco.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+      
+      document.getElementById("test").innerHTML = doc.data().costco;
+
+    });
+});
 
         }
 

@@ -17,13 +17,6 @@ function createUser() {
     });
 }
 
-//<!--
-//        result: document.getElementById("education").value,
-//    resulttwo: document.getElementById("school").value,
-//    resultthree: document.getElementById("travel").value,
-//    resultfour: document.getElementById("download").value
-//-->
-
 
 //-----------------------------------------------------------------------------------
 // This code listens for the submit button on form, grabs the text that user typed
@@ -84,8 +77,8 @@ function processForm(q0, q1, q2, q3) {
 function getAndSaveRecommendation(q0, q1, q2, q3) {
 
     // defaults 
-    var ram = 0; //4, 8, 16 MB
-    var drive = 0; //32, 64, 128, 256 512 GB
+    var ram = "n/a"; //4, 8, 16 MB
+    var drive = "n/a"; //32, 64, 128, 256 512 GB
     var cpu = "n/a"; //i3, i5, i7 core
     var type = "n/a"; // laptop, tablet
     var message = "n/a";
@@ -93,8 +86,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
        // for the power coding student who codes
     if (q0.localeCompare("sciences") == 0 &&
         q1.localeCompare("mostly coding") == 0) {
-        ram = 16;
-        drive = 512;
+        ram = "16GB";
+        drive = "512GB";
         cpu = "i7";
         type = "laptop or desktop";
         message = "You need a powerful machine to ace your school, and keep up your hobbies"
@@ -102,15 +95,15 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
       // for people who are in business and uses excel
     else if (q0.localeCompare("business") == 0 &&
         q1.localeCompare("mostly word or excel") == 0){
-        ram = 8;
-        drive = 256;
+        ram = "8GB";
+        drive = "256GB";
         cpu = "i5";
         type = "laptop";
         message = "Have fun doing business."
     }
   else if (q3.localeCompare("Gaming") == 0){
-        ram = 8;
-        drive = 256;
+        ram = "8GB";
+        drive = "256GB";
         cpu = "i7";
         type = "desktop";
         message = "Have fun gaming."
@@ -119,8 +112,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     else if (q0.localeCompare("others") == 0 &&
         q1.localeCompare("mostly browser based applications") == 0 &&
         q3.localeCompare("Photography") == 0){
-        ram = 16;
-        drive = 512;
+        ram = "16GB";
+        drive = "512GB";
         cpu = "i5";
         type = "desktop";
         message = "Get a MAC, bro. Have fun with Photoshop!"
@@ -129,16 +122,16 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     else if (q0.localeCompare("others") == 0 &&
         q1.localeCompare("mostly browser based applications") == 0 &&
         q3.localeCompare("Video Editing") == 0){
-        ram = 16;
-        drive = 512;
+        ram = "16GB";
+        drive = "512GB";
         cpu = "i5";
         type = "desktop";
         message = "Get a MAC, bro. Need something good for video editing."
     }
       // default choice
     else {
-        ram = 4;
-        drive = 64;
+        ram = "4GB";
+        drive = "64GB";
         cpu = "i3";
         type = "desktop";
         message = "You need just a basic computer on your desk."
@@ -165,5 +158,9 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
 
     //getAnswers();
     //generateResults();
+
+  
+  
+  
 
 }

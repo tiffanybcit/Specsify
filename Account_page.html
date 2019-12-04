@@ -12,7 +12,81 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/navbar.js"></script>
     <link rel="stylesheet" href="style/Account_page.css">
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
 
+  <!-- The Firebase Authentication UI Library -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+    authDomain: "cybersify-2019.firebaseapp.com",
+    databaseURL: "https://cybersify-2019.firebaseio.com",
+    projectId: "cybersify-2019",
+    storageBucket: "cybersify-2019.appspot.com",
+    messagingSenderId: "286797146225",
+    appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+</script>
+  
+  
+<style>
+  .button {
+        border: none;
+        background-color:#b3e4fc;
+        font-size: 16px;
+        cursor: pointer;
+        height: 50px;
+        width: 350px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+        font-size: 11pt;
+        text-align: center;
+
+
+      }
+
+      .empty {
+          height: 60px;
+      }
+    
+      /* On mouse-over */
+    
+      .button:hover {
+          color: white;
+        }
+
+        .submitButton {
+            border: none;
+            background-color:#b3e4fc;
+            font-size: 16px;
+            cursor: pointer;
+            height: 50px;
+            width: 350px;
+            color: black;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+            font-size: 11pt;
+            text-align: center;
+    
+    
+          }
+        
+          /* On mouse-over */
+        
+          .submitButton:hover {
+              color: white;
+            }
+</style>
 </head>
 <body>
     <!--Navbar-->
@@ -60,9 +134,9 @@
         <p><span id="input-name">  </span></p>
         <div class="line-name"></div>
         <p id="name"> Name </p>
-            </br>
-            </br>
-            </br>
+            <br>
+            <br>
+            <br>
         <p><span id="email-name">  </span></p>
         <div class="line-email"></div>
         <p id="email"> Email </p>
@@ -70,9 +144,25 @@
 
     <!-- Buttons -->
         <div class="btn">
-            <button>Saved Answers</button>
-            <button>Saved Recommendations</button>
+          <form action="Answers.html">
+            <button class= "submitButton">Saved Answers</button>
+            </form>
+          <br>
+          <form action="specspage.html">
+            <button class= "submitButton">Saved Recommendations</button>
+            </form>
+          <br>
+            <button class= "submitButton" id="logout">Log Out</button>
+            
         </div>
+  <script>
+  $("#logout").click(function(){
+                    firebase.auth().signOut();
+    alert("logged out");
+    console.log("logged out");
+    window.location.href ='./login.html';
+                    })
+  </script>
 
 </body>
 </html>

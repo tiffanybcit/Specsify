@@ -37,7 +37,53 @@
     var db = firebase.firestore();
 </script>
 
+<style>
+  .button {
+        border: none;
+        background-color:#b3e4fc;
+        font-size: 16px;
+        cursor: pointer;
+        height: 50px;
+        width: 350px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+        font-size: 11pt;
+        text-align: center;
 
+
+      }
+
+      .empty {
+          height: 60px;
+      }
+    
+      /* On mouse-over */
+    
+      .button:hover {
+          color: white;
+        }
+
+        .submitButton {
+            border: none;
+            background-color:#b3e4fc;
+            font-size: 16px;
+            cursor: pointer;
+            height: 50px;
+            width: 350px;
+            color: black;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+            font-size: 11pt;
+            text-align: center;
+    
+    
+          }
+        
+          /* On mouse-over */
+        
+          .submitButton:hover {
+              color: white;
+            }
+</style>
 </head>
 <body>
     <!--Navbar-->
@@ -83,12 +129,12 @@
             <br>
             <p> “How frequently will you bring this device to school?” </p>
             <p> a) once a week, if any; b)  2-3 times a week;  c)daily; </p>
-                <p id="stuff1">stuff</p>
+                <p id="stuff2">stuff</p>
 <!--            <input type="text" id="q1">-->
             <br>
             <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
             <p> a) Gaming;  b) Video Editing;   c)Photography;   d)Not much. </p>
-                <p id="stuff2">stuff</p>
+                <p id="stuff1">stuff</p>
 <!--            <input type="text" id="q2">-->
             <br>
             <p> "Will you be using the device more heavily for (hobbies outside of school work)?" </p>
@@ -100,7 +146,7 @@
 
         </form>
             <form action="specspage.html">
-              <button type="submit">Continue</button>
+              <button class= "submitButton" type="submit">Continue</button>
             </form>
         </div>
     </div>
