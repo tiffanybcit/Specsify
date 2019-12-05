@@ -84,8 +84,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     var message = "n/a";
 
        // for the power coding student who codes
-    if (q0.localeCompare("sciences") == 0 &&
-        q1.localeCompare("mostly coding") == 0) {
+    if (q0.localeCompare("Sciences") == 0 &&
+        q1.localeCompare("Mostly coding") == 0) {
         ram = "16GB";
         drive = "512GB";
         cpu = "i7";
@@ -93,8 +93,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
         message = "You need a powerful machine to ace your school, and keep up your hobbies"
     }
       // for people who are in business and uses excel
-    else if (q0.localeCompare("business") == 0 &&
-        q1.localeCompare("mostly word or excel") == 0){
+    else if (q0.localeCompare("Business") == 0 &&
+        q1.localeCompare("Mostly word or excel") == 0){
         ram = "8GB";
         drive = "256GB";
         cpu = "i5";
@@ -109,8 +109,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
         message = "Have fun gaming."
     }
       // for people who are others and use mostly browser based applications & photoshop
-    else if (q0.localeCompare("others") == 0 &&
-        q1.localeCompare("mostly browser based applications") == 0 &&
+    else if (q0.localeCompare("Others") == 0 &&
+        q1.localeCompare("Mostly browser based applications") == 0 &&
         q3.localeCompare("Photography") == 0){
         ram = "16GB";
         drive = "512GB";
@@ -119,8 +119,8 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
         message = "Get a MAC, bro. Have fun with Photoshop!"
     }
       // for people who use browser based apps and video editing
-    else if (q0.localeCompare("others") == 0 &&
-        q1.localeCompare("mostly browser based applications") == 0 &&
+    else if (q0.localeCompare("Others") == 0 &&
+        q1.localeCompare("Mostly browser based applications") == 0 &&
         q3.localeCompare("Video Editing") == 0){
         ram = "16GB";
         drive = "512GB";
@@ -142,7 +142,7 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
 
 
 
-    // write the recommendations into the database for this user.
+    // write the recommendations into the database for this user. 
     firebase.auth().onAuthStateChanged(function (user) {
         //console.log(user.uid);
         // write a new document of grade value
@@ -160,12 +160,4 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
     //getAnswers();
     //generateResults();
 
-<<<<<<< HEAD
-  
-  
-  
-
 }
-=======
-}
->>>>>>> 5458103ddc756a0ac3ecd341955cac58d7ebb7a1

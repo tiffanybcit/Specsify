@@ -260,3 +260,56 @@ body{
             width: 400px;
         }
       
+
+
+      /*Styles for Buttons*/
+
+
+
+
+
+.button {
+        border: none;
+        background-color:#b3e4fc;
+        font-size: 16px;
+        cursor: pointer;
+        height: 50px;
+        width: 350px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+        font-size: 11pt;
+        text-align: center;
+
+
+      }
+
+      .empty {
+          height: 60px;
+      }
+    
+      /* On mouse-over */
+    
+      .button:hover {
+          color: white;
+        }
+
+        .submitButton {
+            border: none;
+            background-color:#b3e4fc;
+            font-size: 16px;
+            cursor: pointer;
+            height: 50px;
+            width: 350px;
+            color: black;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+            font-size: 11pt;
+            text-align: center;
+    
+    
+          }
+        
+          /* On mouse-over */
+        
+          .submitButton:hover {
+              color: white;
+            }
