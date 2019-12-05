@@ -2,7 +2,7 @@
 Specsify is a web app that contains a set of questionnaire for the user to
 answer, and gives out recommended specifications for the laptop.
 
-###Team 35
+Team 35
 * Project Manager: Tyler Lee A01163840
 * Coder: Tiffany Gu A01045670
 * Designer: Shubhankar Sethi A01170299
