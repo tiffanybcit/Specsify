@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Account</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="script/navbar.js"></script>
-    <link rel="stylesheet" href="style/Account_page.css">
-  
+<head>
+  <title>My Account</title>
+
+  <meta charset="UTF-8">
+  <!-- Navigation bar Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="script/navbar.js"></script>
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
   <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -24,97 +26,105 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
   <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
-    authDomain: "cybersify-2019.firebaseapp.com",
-    databaseURL: "https://cybersify-2019.firebaseio.com",
-    projectId: "cybersify-2019",
-    storageBucket: "cybersify-2019.appspot.com",
-    messagingSenderId: "286797146225",
-    appId: "1:286797146225:web:f5c728822bba76ec9053d0"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    // Our web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+      authDomain: "cybersify-2019.firebaseapp.com",
+      databaseURL: "https://cybersify-2019.firebaseio.com",
+      projectId: "cybersify-2019",
+      storageBucket: "cybersify-2019.appspot.com",
+      messagingSenderId: "286797146225",
+      appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
-</script>
-  
+  </script>
+    <!-- Style sheet associated with account page -->
+    <link rel="stylesheet" href="style/Account_page.css">
 </head>
+
 <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+  <!--Navbar-->
+  <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
 
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Specsify</a>
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Specsify</a>
 
-            <!-- Collapse button -->
-            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
-            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="animated-icon3"><span></span><span></span><span></span></div>
-            </button>
+    <!-- Collapse button -->
+    <button class="navbar-toggler third-button" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon3"><span></span><span></span><span></span></div>
+    </button>
 
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent22">
 
-            <!-- Links -->
-            <ul class="navbar-nav mr-auto">
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item active">
-                <a class="nav-link" href="Home_page.html">Home page<span class="sr-only">(current)</span></a>
-                </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="Home_page.html">Home page<span class="sr-only">(current)</span></a>
+        </li>
 
-                <li class="nav-item">
-                <a class="nav-link" href="Account_page.html">Account</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="help_us.html">Need help?</a>
-                </li>
-            </ul>
-            <!-- Links -->
-            </div>
-            <!-- Collapsible content -->
-            <!-- Profile Picture -->
-    </nav>
+        <li class="nav-item">
+          <a class="nav-link" href="Account_page.html">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help_us.html">Need help?</a>
+        </li>
+      </ul>
 
-    <div class="profile-picture">
-        <div class="image-container">
-            <img src="image/Logo.png" style="width: 100%">
-        </div>
-    </div>
-    <div class="main-container">
-
-        <p><span id="input-name">  </span></p>
-        <div class="line-name"></div>
-        <p id="name"> Name </p>
-            <br>
-            <br>
-            <br>
-        <p><span id="email-name">  </span></p>
-        <div class="line-email"></div>
-        <p id="email"> Email </p>
     </div>
 
-    <!-- Buttons -->
-        <div class="btn">
-          <form action="Answers.html">
-            <button class= "submitButton">Saved Answers</button>
-            </form>
-          <br>
-          <form action="specspage.html">
-            <button class= "submitButton">Saved Recommendations</button>
-            </form>
-          <br>
-            <button class= "submitButton" id="logout">Log Out</button>
-            
-        </div>
+  </nav>
+  <!-- Profile picture -->
+  <div class="profile-picture">
+    <div class="image-container">
+      <img src="image/Logo.png" style="width: 100%">
+    </div>
+  </div>
+  <div class="main-container">
+
+    <!-- Name and email address field -->
+    <p><span id="input-name"> </span></p>
+    <div class="line-name"></div>
+    <p id="name"> Name </p>
+    <br>
+    <br>
+    <br>
+    <p><span id="email-name"> </span></p>
+    <div class="line-email"></div>
+    <p id="email"> Email </p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn">
+    <!-- Lead to answer page-->
+    <form action="Answers.html">
+      <button class="submitButton">Saved Answers</button>
+    </form>
+    <br>
+    <!-- Lead to recommendation page -->
+    <form action="specspage.html">
+      <button class="submitButton">Saved Recommendations</button>
+    </form>
+    <br>
+    <button class="submitButton" id="logout">Log Out</button>
+
+  </div>
+
+  <!-- Logout function -->
   <script>
-  $("#logout").click(function(){
-                    firebase.auth().signOut();
-    alert("logged out");
-    console.log("logged out");
-    window.location.href ='./login.html';
-                    })
+    $("#logout").click(function () {
+      firebase.auth().signOut();
+      alert("logged out");
+      console.log("logged out");
+      window.location.href = './login.html';
+    })
   </script>
 
 </body>
+
 </html>

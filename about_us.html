@@ -1,98 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>About us</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="navbar.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+
+<head>
+  <title>About us</title>
+  <meta charset="utf-8" />
+  <!-- Navigation bar Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="navbar.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <script>
-    // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
-            authDomain: "cybersify-2019.firebaseapp.com",
-            databaseURL: "https://cybersify-2019.firebaseio.com",
-            projectId: "cybersify-2019",
-            storageBucket: "cybersify-2019.appspot.com",
-            messagingSenderId: "286797146225",
-            appId: "1:286797146225:web:f5c728822bba76ec9053d0"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-            var db = firebase.firestore();
-    </script>
-    <link rel="stylesheet" href="style/About_Us_page.css">
-  </head>
-  <body>
-        <!--Navbar-->
-        <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
+  <script>
+    // Our web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDWTUQMurE64ovJnLuICKLCgz2zSlsW0eo",
+      authDomain: "cybersify-2019.firebaseapp.com",
+      databaseURL: "https://cybersify-2019.firebaseio.com",
+      projectId: "cybersify-2019",
+      storageBucket: "cybersify-2019.appspot.com",
+      messagingSenderId: "286797146225",
+      appId: "1:286797146225:web:f5c728822bba76ec9053d0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+  </script>
+  <!-- The style sheet associated with this page -->
+  <link rel="stylesheet" href="style/About_Us_page.css">
+</head>
 
-                <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">Specsify</a>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
 
-                <!-- Collapse button -->
-                <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
-                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="animated-icon3"><span></span><span></span><span></span></div>
-                </button>
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">Specsify</a>
 
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+  <!-- Collapse button -->
+  <button class="navbar-toggler third-button" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <div class="animated-icon3"><span></span><span></span><span></span></div>
+  </button>
 
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="Home_page.html">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="Account_page.html">Account</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="help_us.html">Need help?</a>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-                <!-- End of the navbar -->
-                <!-- Text -->
-                <div class="empty1"></div>
-                <div class="title">
-                    <p>About Us</p>
-                </div>
-                <div class="info">
-                    <p>
-                        We’re a group of three students who study Computer Systems Technology at BCIT.
-                        Our team consists of one main coder, one main project manager and a main designer.
-                        When we first started on this project, we were all complete strangers to each other,
-                        it was the first day of class and we got paired randomly with two other people.
-                        Over a period of four months, our team became very close and worked diligently towards our end goal.
+  <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent22">
 
-                    </br>
-                    </br>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Home_page.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Account_page.html">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help_us.html">Need help?</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End of the navbar -->
+  <!-- Information that will appear on the webpage -->
+  <div class="empty1"></div>
+  <div class="title">
+    <p>About Us</p>
+  </div>
+  <div class="info">
+    <p>
+      We’re a group of three students who study Computer Systems Technology at BCIT.
+      Our team consists of one main coder, one main project manager and a main designer.
+      When we first started on this project, we were all complete strangers to each other,
+      it was the first day of class and we got paired randomly with two other people.
+      Over a period of four months, our team became very close and worked diligently towards our end goal.
 
-                        We have created this application called “Specsify” for our “Projects 1” course.
-                        Our team wanted to create something that would take a certain input from the user and provide them with a solution of some sort.
-                        After days of research and discussion, we decided upon this idea of taking input from the user and us suggesting
-                        some laptops with that input - which was later refined to provide just the specs of those laptops.
-                        Our project has evolved and been redesigned constantly to provide the best possible user experience that we are able to.
-                        Over the span of our project, our team completed various sprints and improved tremendously with the help of our instructor.
-                        Every week, she provided us with new resources that allowed us to bring our project up a notch.
+      </br>
+      </br>
 
-                        Tiffany Gu, Tyler Lee, Shubhankar Sethi
-                    </p>
-                </div>
-  </body>
+      We have created this application called “Specsify” for our “Projects 1” course.
+      Our team wanted to create something that would take a certain input from the user and provide them with a solution
+      of some sort.
+      After days of research and discussion, we decided upon this idea of taking input from the user and us suggesting
+      some laptops with that input - which was later refined to provide just the specs of those laptops.
+      Our project has evolved and been redesigned constantly to provide the best possible user experience that we are
+      able to.
+      Over the span of our project, our team completed various sprints and improved tremendously with the help of our
+      instructor.
+      Every week, she provided us with new resources that allowed us to bring our project up a notch.
+
+      Tiffany Gu, Tyler Lee, Shubhankar Sethi
+    </p>
+  </div>
+</body>
+
 </html>

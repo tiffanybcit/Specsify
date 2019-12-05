@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Home</title>
+
     <meta charset="UTF-8">
+    <!-- Bootstrap for navigation bar -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/navbar.js"></script>
+
+    <!-- Style sheet for home page -->
     <link rel="stylesheet" href="style/homepage.css">
 </head>
+
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
 
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Specsify</a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Specsify</a>
 
-            <!-- Collapse button -->
-            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
-            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Collapse button -->
+        <button class="navbar-toggler third-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false"
+            aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>
-            </button>
+        </button>
 
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent22">
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="Home_page.html">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="Home_page.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="Account_page.html">Account</a>
+                    <a class="nav-link" href="Account_page.html">Account</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="help_us.html">Need help?</a>
+                    <a class="nav-link" href="help_us.html">Need help?</a>
                 </li>
             </ul>
             <!-- Links -->
-            </div>
-            <!-- Collapsible content -->
+        </div>
+        <!-- Collapsible content -->
     </nav>
+    <!-- Logo -->
     <div class="logoHandler">
-      <img src="image/Logo.png" alt="logo" id="logoh">
+        <img src="image/Logo.png" alt="logo" id="logoh">
     </div>
     <div class="descriptionDiv">
         <p id="head1">Find Your New Laptop Now!</p>
         <div class="empty"></div>
+        <!-- Short explanation to our project -->
         <div class="paraHome">
             <p>This app uses a series of algorithms to filter out and
-            provide you with the specs that you desire and need based on a
-            series of questions that will be provided.
-            Click the button below to begin the questionnaire.</p>
+                provide you with the specs that you desire and need based on a
+                series of questions that will be provided.
+                Click the button below to begin the questionnaire.</p>
         </div>
     </div>
     <div id="empty"></div>
+    <!-- Button to proceed to the questionnaire -->
     <form action="questionnaire.html">
-      <div class="button">
-            <button class="button NEWQ">BEGIN NEW QUESTIONAIRE</button>
-      </div>
+        <div class="button">
+            <button class="button NEWQ">BEGIN NEW QUESTIONNAIRE</button>
+        </div>
     </form>
 </body>
+
 </html>

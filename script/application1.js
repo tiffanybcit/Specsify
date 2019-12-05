@@ -31,9 +31,6 @@ function setFormListener(form) {
         var q2 = document.getElementById("q2").value;
         var q3 = document.getElementById("q3").value;
 
-        console.log(q3);
-
-        console.log("inside setFormListener ..." + q0 + q1 + q2 + q3);
         processForm(q0, q1, q2, q3);
     })
 }
@@ -139,9 +136,6 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
 
     }
 
-
-
-
     // write the recommendations into the database for this user. 
     firebase.auth().onAuthStateChanged(function (user) {
         //console.log(user.uid);
@@ -156,8 +150,5 @@ function getAndSaveRecommendation(q0, q1, q2, q3) {
             merge: true
         });
     });
-
-    //getAnswers();
-    //generateResults();
 
 }

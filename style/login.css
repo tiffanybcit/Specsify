@@ -1,0 +1,13 @@
+    body {
+            background-color: #b3e4fc;
+        }
+        #logo {
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #white {
+            color: white;
+        }
