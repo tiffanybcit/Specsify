@@ -10,7 +10,7 @@ answer, and gives out recommended specifications for the laptop.
 > https://github.com/yiwen950725/Specsify
 ### Spescify website
 > https://cybersify-2019.firebaseapp.com/
-### File Directory
+## File Directory
 * image
   * Logo.png
 * script
