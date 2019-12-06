@@ -16,6 +16,9 @@
     <script type="text/javascript" src="script/navbar.js"></script>
     <!-- CSS related to navigation bar -->
     <link rel="stylesheet" href="style/navbar.css">
+    <!-- CSS on the fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/specspagecss.css">
     <!-- CSS related to buttons -->
     <link rel="stylesheet" href="style/Button.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -50,7 +53,7 @@
     <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Specsify</a>
+        <a class="navbar-brand" href="#" style="font-family: 'Rubik', sans-sans-serif;">Specsify</a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler third-button" type="button" data-toggle="collapse"
@@ -80,16 +83,19 @@
     </nav>
 
     <div id="homeparagraph" style="text-align: center">
-        <h1>Your Specifications</h1>
+        <h1 id="heading">Your Specifications</h1>
         <!-- Displays the recommendations -->
-        <div style="margin: 30px">
-            <p style="font-size: 30pt">CPU: <span id="stuff">Stuff</span></p>
-            <p style="font-size: 30pt">Drive: <span id="stuff1">Stuff</span></p>
-            <p style="font-size: 30pt">RAM: <span id="stuff2">Stuff</span></p>
-            <p style="font-size: 30pt">Type: <span id="stuff3">Stuff</span></p>
-            <p style="font-size: 30pt"><span id="stuff4">Stuff</span></p>
-
+        <br>
+        <br>
+        <div id="questionDIV">
+            <p class="question">CPU: <span id="stuff"> </span></p>
+            <p class="question">Storage: <span id="stuff1"> </span></p>
+            <p class="question">RAM: <span id="stuff2"> </span></p>
+            <p class="question">Type: <span id="stuff3"> </span></p>
+            <p class="question"><span id="stuff4"> </span></p>
         </div>
+        <br>
+        <br>
         <!-- Go to home page button -->
         <form action="Home_page.html">
             <button class="submitButton" , type="submit">Go to Homepage</button>

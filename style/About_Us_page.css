@@ -1,7 +1,7 @@
 /* Body*/
 body{
     background-color: #b3e4fc;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 /* Nav bar CSS*/
 /* Icon 1 */
@@ -179,13 +179,14 @@ body{
     }
 
     .title {
-        font-family: 'Work Sans', sans-serif;
+        font-family: 'Rubik', sans-serif;
+        font-weight: bold;
         font-size: 30pt;
         text-align: center;
     }
 
     .info {
-        font-family: 'Work Sans', sans-serif;
+        font-family: 'Rubik', sans-serif;
         font-size: 10pt;
         text-align: center;
         margin-left: 15px;

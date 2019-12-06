@@ -44,6 +44,7 @@
 
   <!-- Style sheet associated with the questionnaire page -->
   <link rel="stylesheet" href="style/questionnaire_CSS.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 
 </head>
 
@@ -52,7 +53,7 @@
   <nav class="navbar navbar-dark  indigo darken-2" style="background-color: #2f3e9f; margin: 10px;">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Specsify</a>
+    <a class="navbar-brand" href="#" style="font-family: 'Rubik', sans-serif;">Specsify</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler third-button" type="button" data-toggle="collapse"
@@ -79,9 +80,8 @@
     </div>
   </nav>
   <div class="title">
-    <p><b> Welcome to the Quiz! </b></p>
+    <p><b> Welcome to the Questionnaire! </b></p>
   </div>
-  <br>
 
   <!----------------------------------->
   <!-- Create a form                 -->
@@ -89,38 +89,39 @@
   <div style="text-align: center">
     <form id="myform">
 
-      <p>What is your major?</p>
+      <p class="question">What is your major?</p>
       <select size="4" required="required" name="major" id="q0">
         <option value="Business">Business</option>
         <option value="Sciences">Sciences</option>
         <option value="Nursing">Nursing</option>
         <option value="Others">Others</option>
       </select>
-
-      <p>What type of school work will you mainly be using the device for?</p>
+      <br>
+      <br>
+      <p class="question">What will your device be used for?</p>
       <select size="3" required="required" name="usage" id="q1">
         <option value="Mostly coding">Mostly coding</option>
         <option value="Mostly word or excel">Mostly word or excel</option>
         <option value="Mostly browser based applications">Mostly browser based applications</option>
-
       </select>
-
-      <p>How frequently will you bring this device to school?</p>
+      <br>
+      <br>
+      <p class="question">How frequently will you bring your device to school?</p>
       <select size="3" required="required" name="frequency" id="q2">
         <option value="Once a week">Once a week</option>
         <option value="2-3 times a week">2-3 times a week</option>
         <option value="Daily">Daily</option>
-      
       </select>
-
-      <p>Will you be using the device more heavily for (hobbies outside of school work)?</p>
+      <br>
+      <br>
+      <p class="question">Which of these will you use your device for most?</p>
       <select size="4" required="required" name="hobbies" id="q3">
         <option value="Gaming">Gaming</option>
         <option value="Video Editing">Video Editing</option>
         <option value="Photography">Photography</option>
         <option value="Others">Others</option>
-
       </select>
+      <br>
       <!-- Submit to write on database -->
       <div class="empty"></div>
       <button class="submitButton" , type="submit">Submit</button>

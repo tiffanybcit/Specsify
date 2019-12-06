@@ -2,7 +2,7 @@
 /* Body*/
 body{
   background-color: #b3e4fc;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 /* Nav bar CSS*/
 /* Icon 1 */
@@ -183,18 +183,20 @@ body{
   }
   .descriptionDiv {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
 
   #head1 {
     font-size:40pt;
     padding-bottom: 0px;
+    font-family: 'Rubik', sans-serif;
   }
 
   .paraHome {
     font-size: 12pt;
     margin-left: 40px;
     margin-right: 40px;
+    font-family: 'Rubik', sans-serif;
   }
 
   #empty {
@@ -219,15 +221,15 @@ body{
       color: white;
     }
 
-      .NEWQ {
-          height: 65px;
-          width: 400px;
-          color: black;
-          box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
-          font-size: 13pt;
-          text-align:center;
-      }
-      
+    .NEWQ {
+        height: 65px;
+        width: 400px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+        font-size: 13pt;
+        text-align:center;
+    }
+
     /* Tablet */
     @media screen and (max-width: 992px) {
       body {
@@ -243,11 +245,12 @@ body{
       }
       .descriptionDiv {
         text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Rubik', sans-serif;
       }
 
       #head1 {
         padding-bottom: 10px;
+        font-family: 'Rubik', sans-serif;
         font-size:30pt;
       }
 
@@ -293,9 +296,9 @@ body{
   @media screen and (max-width: 600px) {
     body {
       background-color: #b3e4fc;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: 'Rubik', sans-serif;
     }
-       
+
         .logoHandler {
           text-align: center;
         }
@@ -305,11 +308,12 @@ body{
         }
         .descriptionDiv {
           text-align: center;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: 'Rubik', sans-serif;
         }
 
         #head1 {
           padding-bottom: 10px;
+          font-family: 'Rubik', sans-serif;
           font-size:20pt;
         }
 

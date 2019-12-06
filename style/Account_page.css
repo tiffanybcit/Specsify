@@ -1,6 +1,7 @@
 /* Body*/
 body{
     background-color: #b3e4fc;
+    font-family: 'Rubik', sans-sans-serif;
 }
 /* Nav bar CSS*/
 /* Icon 1 */
@@ -207,10 +208,12 @@ body{
         width: 300px;
         background-color: black;
         margin: auto;
+        font-family: 'Rubik', sans-serif;
     }
 
     #name {
         padding-top: 5px;
+        font-family: 'Rubik', sans-serif;
     }
 
     #email {
@@ -227,9 +230,9 @@ body{
         align-items: center;
         justify-content: center;
         vertical-align: middle;
-        
+
       }
-      
+
       /* On mouse-over */
 
       .btn:hover {
@@ -245,7 +248,7 @@ body{
             position: relative;
             width: 400px;
 
-            
+
         }
 
         .savedA {
@@ -259,7 +262,7 @@ body{
             position: relative;
             width: 400px;
         }
-      
+
 
 
       /*Styles for Buttons*/
@@ -283,33 +286,33 @@ body{
 
       }
 
-      .empty {
-          height: 60px;
+    .empty {
+        height: 60px;
+    }
+
+    /* On mouse-over */
+
+    .button:hover {
+        color: white;
       }
-    
-      /* On mouse-over */
-    
-      .button:hover {
-          color: white;
+
+      .submitButton {
+          border: none;
+          background-color:#b3e4fc;
+          font-size: 16px;
+          cursor: pointer;
+          height: 50px;
+          width: 350px;
+          color: black;
+          box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+          font-size: 11pt;
+          text-align: center;
+
+
         }
 
-        .submitButton {
-            border: none;
-            background-color:#b3e4fc;
-            font-size: 16px;
-            cursor: pointer;
-            height: 50px;
-            width: 350px;
-            color: black;
-            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
-            font-size: 11pt;
-            text-align: center;
-    
-    
+        /* On mouse-over */
+
+        .submitButton:hover {
+            color: white;
           }
-        
-          /* On mouse-over */
-        
-          .submitButton:hover {
-              color: white;
-            }
